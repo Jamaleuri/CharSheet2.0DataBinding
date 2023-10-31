@@ -1,0 +1,9 @@
+﻿CName,Race,Class,Background,Alignment,Playername,Notes,ExperiencePoints,HitDice,Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma,ArmorPro,WeaponsPro,ToolsPro,LanguagesPro,Defenses,Conditions,Advantages,Proficiency,Speed,Initiativ,ArmorClass,CurrentHP,TempHP,MaxHP,Acrobatics,AnimalHandling,Arcana,Athletics,Deception,History,Insight,Intimidation,Investigation,Medicine,Nature,Perception,Performance,Persuasion,Religion,SleightOfHand,Stealth,Survival,Inspiration,STRSavingThrow,DEXSavingThrow,CONSavingThrow,INTSavingThrow,WISSavingThrow,CHASavingThrow,DS_succ,DS_fail,AttackExtras
+Filip,dsfafs,"fgsdgfds,4",gfdskgfjds,Nooo,Bodea,,,1d8,8,10,12,14,16,18,,,,,,,,2,20,1,20,20,0,0,False,True,False,False,False,False,False,False,False,False,False,True,True,False,True,False,False,False,True,True,False,False,False,True,False,"[False,False,False]","[False,False,False]",
+
+
+@
+Name,Description,Amount,Weight
+halowen,costume,1,2
+xmas,kex,100,4
+
