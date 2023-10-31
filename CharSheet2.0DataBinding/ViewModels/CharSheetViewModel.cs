@@ -156,6 +156,7 @@ namespace CharSheet20DataBinding.ViewModels
                 CalcedStrength = CalculateNumber(strength, 0, false);
                 STStrength = CalculateNumber(strength, Proficiency, STRSavingThrow);
                 AthleticsNumber = CalculateNumber(Strength, Proficiency, athletics);
+                OnPropertyChanged(nameof(Strength));
             }
         }
 
@@ -185,6 +186,7 @@ namespace CharSheet20DataBinding.ViewModels
                 AcrobaticsNumber = CalculateNumber(Dexterity, Proficiency, acrobatics);
                 SleightofHandNumber = CalculateNumber(Dexterity, Proficiency, sleightOfHand);
                 StealthNumber = CalculateNumber(Dexterity, Proficiency, stealth);
+                OnPropertyChanged(nameof(Dexterity));
             }
         }
         private int calcedDexterity;
@@ -208,7 +210,8 @@ namespace CharSheet20DataBinding.ViewModels
             {
                 constitution = value;
                 CalcedConstitution = CalculateNumber(constitution, 0, false);
-                STConstitution = CalculateNumber(constitution, Proficiency, CONSavingThrow);
+                STConstitution = CalculateNumber(constitution, Proficiency, CONSavingThrow); 
+                OnPropertyChanged(nameof(Constitution));
             }
         }
         private int calcedConstitution;
@@ -240,6 +243,7 @@ namespace CharSheet20DataBinding.ViewModels
                 NatureNumber = CalculateNumber(Intelligence, Proficiency, nature);
                 ReligionNumber = CalculateNumber(Intelligence, Proficiency, religion);
                 HistoryNumber = CalculateNumber(Intelligence, Proficiency, history);
+                OnPropertyChanged(nameof(Intelligence));
             }
         }
         private int calcedIntelligence;
@@ -269,6 +273,7 @@ namespace CharSheet20DataBinding.ViewModels
                 PerceptionNumber = CalculateNumber(Wisdom, Proficiency, perception);
                 AnimalHandlingNumber = CalculateNumber(Wisdom, Proficiency, animalHandling);
                 SurvivalNumber = CalculateNumber(Wisdom, Proficiency, survival);
+                OnPropertyChanged(nameof(Wisdom));
             }
         }
         private int calcedWisdom;
@@ -296,6 +301,7 @@ namespace CharSheet20DataBinding.ViewModels
                 IntimidationNumber = CalculateNumber(Charisma, Proficiency, intimidation);
                 PerformanceNumber = CalculateNumber(Charisma, Proficiency, performance);
                 PersuasionNumber = CalculateNumber(Charisma, Proficiency, persuasion);
+                OnPropertyChanged(nameof(Charisma));
             }
         }
         private int calcedCharisma;
@@ -508,6 +514,7 @@ namespace CharSheet20DataBinding.ViewModels
                 PerceptionNumber = CalculateNumber(Wisdom, Proficiency, perception);
                 AnimalHandlingNumber = CalculateNumber(Wisdom, Proficiency, animalHandling);
                 SurvivalNumber = CalculateNumber(Wisdom, Proficiency, survival);
+                OnPropertyChanged(nameof(Proficiency));
             }
         }
 
@@ -991,6 +998,7 @@ namespace CharSheet20DataBinding.ViewModels
             {
                 strSavingThrow = value;
                 STStrength = CalculateNumber(Strength, Proficiency, value);
+                OnPropertyChanged(nameof(STRSavingThrow));
             }
         }
 
@@ -1004,6 +1012,7 @@ namespace CharSheet20DataBinding.ViewModels
             {
                 dexSavingThrow = value;
                 STDexterity = CalculateNumber(Dexterity, Proficiency, value);
+                OnPropertyChanged(nameof(DEXSavingThrow));
             }
         }
 
@@ -1016,6 +1025,7 @@ namespace CharSheet20DataBinding.ViewModels
             {
                 conSavingThrow = value;
                 STConstitution = CalculateNumber(Constitution, Proficiency, value);
+                OnPropertyChanged(nameof(CONSavingThrow));
             }
         }
 
@@ -1028,6 +1038,7 @@ namespace CharSheet20DataBinding.ViewModels
             {
                 intSavingThrow = value;
                 STIntelligence = CalculateNumber(Intelligence, Proficiency, value);
+                OnPropertyChanged(nameof(INTSavingThrow));
             }
         }
 
@@ -1040,6 +1051,7 @@ namespace CharSheet20DataBinding.ViewModels
             {
                 wisSavingThrow = value;
                 STWisdom = CalculateNumber(Wisdom, Proficiency, value);
+                OnPropertyChanged(nameof(WISSavingThrow));
             }
         }
 
@@ -1052,6 +1064,7 @@ namespace CharSheet20DataBinding.ViewModels
             {
                 chaSavingThrow = value;
                 STCharisma = CalculateNumber(Charisma, Proficiency, value);
+                OnPropertyChanged(nameof(CHASavingThrow));
             }
         }
 
@@ -1185,6 +1198,8 @@ namespace CharSheet20DataBinding.ViewModels
                 Speed = Speed,
                 Initiativ = Initiativ,
                 CurrentHP = CurrentHP,
+                MaxHP = MaxHP,
+                TempHP = TempHP,
                 items = items.ToList(),
                 Acrobatics = Acrobatics,
                 AnimalHandling = AnimalHandling,
