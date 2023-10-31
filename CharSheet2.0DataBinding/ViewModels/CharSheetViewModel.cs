@@ -210,7 +210,7 @@ namespace CharSheet20DataBinding.ViewModels
             {
                 constitution = value;
                 CalcedConstitution = CalculateNumber(constitution, 0, false);
-                STConstitution = CalculateNumber(constitution, Proficiency, CONSavingThrow); 
+                STConstitution = CalculateNumber(constitution, Proficiency, CONSavingThrow);
                 OnPropertyChanged(nameof(Constitution));
             }
         }
@@ -604,18 +604,18 @@ namespace CharSheet20DataBinding.ViewModels
         }
 
         private ObservableCollection<Item> _items;
-        public ObservableCollection<Item> items 
-        { 
-            get 
-            { 
+        public ObservableCollection<Item> items
+        {
+            get
+            {
                 return _items;
-            } 
+            }
             set
             {
                 _items = value;
                 OnPropertyChanged(nameof(items));
             }
-        }   
+        }
 
         #region Skills
         private bool acrobatics;
@@ -623,10 +623,10 @@ namespace CharSheet20DataBinding.ViewModels
         public bool Acrobatics
         {
             get { return acrobatics; }
-            set 
-            { 
-                acrobatics = value; 
-                AcrobaticsNumber = CalculateNumber(Dexterity, Proficiency, acrobatics); 
+            set
+            {
+                acrobatics = value;
+                AcrobaticsNumber = CalculateNumber(Dexterity, Proficiency, acrobatics);
                 OnPropertyChanged(nameof(Acrobatics));
             }
         }
@@ -1067,11 +1067,37 @@ namespace CharSheet20DataBinding.ViewModels
                 OnPropertyChanged(nameof(CHASavingThrow));
             }
         }
+        private ObservableCollection<bool> dS_Succ = new();
 
+        public ObservableCollection<bool> DS_succ 
+        {
+            get
+            { 
+                return dS_Succ;
+            }
+            set 
+            { 
+                dS_Succ = value;
+                OnPropertyChanged(nameof(DS_succ));
+            } 
+        }
 
-        public bool[] DS_succ { get; set; } = new bool[3] { false, false, false };
+        private ObservableCollection<bool> dS_fail= new();
 
-        public bool[] DS_fail { get; set; } = new bool[3] { false, false, false };
+        public ObservableCollection<bool> DS_fail
+        {
+            get
+            {
+                return dS_fail;
+            }
+            set
+            {
+                dS_fail = value;
+                OnPropertyChanged(nameof(DS_fail));
+            }
+        }
+
+       
         public ObservableCollection<Attacks> attacks = new ObservableCollection<Attacks>();
         public ObservableCollection<Spells> spells = new ObservableCollection<Spells>();
 
@@ -1226,8 +1252,8 @@ namespace CharSheet20DataBinding.ViewModels
                 WISSavingThrow = WISSavingThrow,
                 DEXSavingThrow = DEXSavingThrow,
                 CHASavingThrow = CHASavingThrow,
-                DS_succ = DS_succ,
-                DS_fail = DS_fail,
+                DS_succ = DS_succ.ToArray(),
+                DS_fail = DS_fail.ToArray(),
                 attacks = attacks.ToList(),
                 spells = spells.ToList(),
 
@@ -1326,8 +1352,8 @@ namespace CharSheet20DataBinding.ViewModels
                     WISSavingThrow = character.WISSavingThrow;
                     DEXSavingThrow = character.DEXSavingThrow;
                     CHASavingThrow = character.CHASavingThrow;
-                    DS_succ = character.DS_succ;
-                    DS_fail = character.DS_fail;
+                    DS_succ = character.DS_succ.ToCsv().FromCsv<ObservableCollection<bool>>();
+                    DS_fail = character.DS_fail.ToCsv().FromCsv<ObservableCollection<bool>>();
                     character.attacks = attacks.ToList();
                     character.spells = spells.ToList();
                 }
